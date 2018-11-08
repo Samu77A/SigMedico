@@ -1,0 +1,49 @@
+public class mantenimientoLogin {
+
+    EntityManager em;
+
+    public static void main(String[] args) {
+
+        mantenimientoLogin login = new mantenimientoLogin();
+
+        try {
+
+            Login log = login.validar("samu", "samu");
+
+            if (log != null) {
+                System.out.println("usuario: " + log.getUsuario() + " Ingreso Exitoso");
+            } else {
+                System.out.println("Error no hay data");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
+
+    public Login validar(String usuario, String pass) {
+        em = JpaUtil.getEntityManagerFactory().createEntityManager();
+
+        Query q = em.createNamedQuery("Login.findByUsuario", Login.class).setParameter("usuario", usuario);
+
+        List<Login> lista = q.getResultList();
+
+        if (!lista.isEmpty()) {
+            Query qe = em.createNamedQuery("Login.findByPass", Login.class).setParameter("pass", pass);
+
+            List<Login> pass1 = qe.getResultList();
+
+            if (!pass1.isEmpty()) {
+
+                return lista.get(0);
+
+            } else {
+                System.out.println("Error contraseña");
+            }
+        } else {
+            System.out.println("Error Usuario");
+        }
+        return null;
+    }
+
+}
