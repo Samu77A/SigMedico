@@ -1,0 +1,379 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Administrador</title>
+        <link href="vendor/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="vendor/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="vendor/css/datepicker3.css" rel="stylesheet"/>
+        <link href="vendor/css/styles.css" rel="stylesheet"/>
+        <link href="images/logo1.png" rel="shortcut icon" ></link>
+        <style>
+            .ui-growl-item-container{
+                position:relative !important;
+                margin: 40px 0 10px 0 !important;
+                opacity:.85 !important;
+                filter:alpha(opacity=85) !important;
+            }
+            .ui-widget-header {
+
+                border: 1px solid #D5D5D5;
+                background: #fff;
+                color: #30a5ff;
+                font-weight: bold;
+
+            }
+        </style>
+    </h:head>
+    <h:body> 
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="#"><span>C M </span>Ultimo Suspiro</a>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <form action="" method="post"><br/>
+                            <input type="text" name="buscar" placeholder="Bucar..." class="form-control-sm btn btn-info"/>
+                            <input type="submit" name="enviar" value="Buscar" class="btn btn-info"/>
+                        </form>
+
+                    </ul>
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+            <div class="profile-sidebar">
+                <div class="profile-userpic">
+                    <img src="images/admin.jpg" class="img-responsive" alt=""/>
+                </div>
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">Usuario</div>
+                    <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="divider"></div>
+            <form role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Buscar.."/>
+                </div>
+            </form>
+            <ul class="nav menu">
+                <li class="active"><a href="administrador.xhtml"><spam class="glyphicon glyphicon-th-large"/>&nbsp; Administrador</a></li>
+                <br></br><h3> &nbsp;Consultar</h3>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+                        <em class="fa fa-navicon">&nbsp;</em> Consultar Datos 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-1" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-1">
+                        <li><a class="" href="mostrarDepto.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Departamentos
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarMuni.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Municipios
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarUsuario.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Usuarios
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-7">
+                        <em class="fa fa-navicon">&nbsp;</em>Consultar Hospital 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-7" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-7">
+                        <li><a class="" href="consultarExpe.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Expedientes
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarArea.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Areas
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarCons.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Consultorios
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarTurno.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Turnos
+                            </a>
+                        </li>
+                        <li><a class="" href="mostrarHospital.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Hospital
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-8">
+                        <em class="fa fa-navicon">&nbsp;</em>Consult Medicamento
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-8" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-8">    
+                        <li><a class="" href="mostrarMedicamentoTipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span>Medicamentos y tipos
+                            </a>
+                        </li>
+                        <li><a class="" href="mostrarTipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span>Medicamentos
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-9">
+                        <em class="fa fa-navicon">&nbsp;</em>Consult Enfermedad
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-9" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-9">
+                        <li><a class="" href="consultar_enfermedad.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Enfermedad
+                            </a>
+                        </li>
+                        <li><a class="" href="mostrar_tipo_emfermedad.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Tipos de Enfermedades
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <br></br><h3> &nbsp;Insertar</h3>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-6">
+                        <em class="fa fa-">&nbsp;</em> In Datos Usuarios
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-6" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-6">
+                        <li><a class="" href="insertarDepto.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Departamento
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarMuni.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Municipio
+                            </a>
+                        </li>
+                        <li><a class="" href="insertarUsuario.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Usuario
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-3">
+                        <em class="fa fa-">&nbsp;</em> In Datos Hospital
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-3" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-3">
+                        <li><a class="" href="ingresarCons.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Consultorio
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarExpe.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Expediente
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarTipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Tipo Medicamento
+                            </a>
+                        </li>
+                        <li><a class="" href="insertarArea.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Area
+                            </a>
+                        </li>
+
+                        <li><a class="" href="insertarHospital.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Hospital
+                            </a>
+                        </li>
+                        <li><a class="" href="insertarTurno.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Turno
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-4">
+                        <em class="fa fa-">&nbsp;</em> In Medicamentos
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-4" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-4"> 
+                        <li><a class="" href="ingresarMedicamento.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> medicamento
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarMedicamentotipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Medicamento Tipo
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarTipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Tipo Medicamento
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-5">
+                        <em class="fa fa-">&nbsp;</em> In Enfermedades
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-5" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-5">
+                        <li><a class="" href="insertaEnfermedad.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Enfermedad
+                            </a>
+                        </li>
+                        <li><a class="" href="insertar_tipo_enfermedad.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Tipo Enfermedad
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <br/>
+                <li><a href="../index.xhtml"><em class="fa fa-close">&nbsp;</em> Cerrar Cesion</a></li>
+            </ul>
+        </div><!--/.sidebar-->
+
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main"> 
+            <div class="row">
+                <div class="col-lg-12">
+                    <h6 class="page-header">Bienvenido #{user}</h6>
+                </div>
+            </div><!--/.row-->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default text-center">
+                        <h1><strong>Consultas</strong></h1>
+                        <hr></hr>
+                        <div class="card-body">
+                            <hr class="btn btn-primary" style="margin-top: -3px"/> Consulta Pendiente <p:spacer width="75" height="10" /> 
+                            <hr class="btn btn-success" style="margin-top: -3px"/> Consulta Realizada <p:spacer width="75" height="10" /> 
+                            <hr class="btn btn-warning" style="margin-top: -3px"/> Consulta con Problemas <p:spacer width="75" height="10" /> 
+                            <hr class="btn btn-danger" style="margin-top: -3px"/> Consulta Perdida <p:spacer width="75" height="10" /> 
+                            <hr class="btn btn-info" style="margin-top: -3px"/> Consulta Reprogramada <hr style="margin-top: 3px"/> 
+
+
+                            <p:growl id="grow1" life="3000" showDetail="true"/>
+                            <h:form id="form">
+
+                                <p:dataGrid var="c" value="#{beanConsulta.init()}" columns="3" layout="grid"
+                                            rows="6" paginator="true" id="ca"
+                                            paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                            rowsPerPageTemplate="3,6,12,16" >
+
+                                    <f:facet name="header">
+                                        Todas las Citas       
+                                        <p:selectCheckboxMenu  id="toggler" style="float:right">
+
+                                        </p:selectCheckboxMenu>
+                                    </f:facet>
+                                    <p:panel header="Consulta #{c.idConsulta}" style="text-align:center; background:#{c.estadoC}">
+                                        <h:panelGrid columns="2" style="width:100%; background: #fff; border-radius: 5px !important;">
+                                            
+                                            <label><strong>CM</strong></label>
+                                            <p:graphicImage value="../images/icon.png" style="width: 30%; padding: 7px; background: #fff;"/> 
+                                            <br></br>
+
+                                            <label>Expediente:</label>
+                                            <h:outputText value="#{c.estado}" />
+
+                                            <label>Paciente : </label>
+                                            <h:outputText value="#{c.idCitas.idPaciente.nombres}" />
+
+                                            <label>Fecha:</label> 
+                                            <h:outputText value="#{c.idCitas.fechaHora}" />   
+
+                                            <label>Consultorio:</label>
+                                            <h:outputText value="#{c.idCitas.idConsultorio.consultorio}" />
+                                            <br></br>
+                                            <br></br>
+                                            <label></label>
+                                                <p:commandLink update=":form:carDetail" oncomplete="PF('carDialog').show()" title="Ver detalles de la consulta">
+                                                    <p:graphicImage value="../images/lupa.png" style="width: 15%; padding: 7px;"/>
+                                                    <h:outputText/>
+                                                    <f:setPropertyActionListener value="#{c}" target="#{beanConsulta.selectedConsulta}" />
+                                                </p:commandLink>
+
+                                        </h:panelGrid>
+                                        
+                                    </p:panel>
+
+                                </p:dataGrid>
+
+                                <p:dialog header="Detalles de la Consulta" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                                    <p:outputPanel id="carDetail" style="text-align:center;">
+                                        <p:panelGrid  columns="2" rendered="#{not empty beanConsulta.selectedConsulta}" columnClasses="value,value">
+                                            <f:facet name="header">
+                                                <p:graphicImage value="../images/icon.png" style="width: 30%; padding: 7px;"/> 
+                                            </f:facet>
+
+                                            <h:outputText value="Tipo de cita : "/>
+                                            <h:outputText value="#{beanConsulta.selectedConsulta.idCitas.tipoCita}" style="color: #ff3333" />
+
+                                            <h:outputText value="Fecha de Inicio : " />
+                                            <h:outputText value="#{beanConsulta.selectedConsulta.idCitas.fechaHora}" style="color: #30a5ff"/>
+
+                                            <h:outputText value="Fecha de fin : " />
+                                            <h:outputText value="#{beanConsulta.selectedConsulta.idCitas.fechaHora}" style="color: #30a5ff"/>
+
+                                            <h:outputText value="Codigo de Expediente : "/>
+                                            <h:outputText value="#{beanConsulta.selectedConsulta.estado}" style="color: #ff3333"/>
+
+                                            <h:outputText value="Paciente : "/>
+                                            <h:outputText value="#{beanConsulta.selectedConsulta.idCitas.idPaciente.nombres}" style="color: #ff3333"/>
+
+                                            <h:outputText value="Medico : " />
+                                            <h:outputText value="#{beanConsulta.selectedConsulta.idCitas.idMedico.nombres}" style="color: #30a5ff"/>
+
+                                            <h:outputText value="Consultorio : " />
+                                            <h:outputText value="#{beanConsulta.selectedConsulta.idCitas.idConsultorio.consultorio}" style="color: #30a5ff"/>
+
+                                            <h:outputText value="Area : "/>
+                                            <h:outputText value="#{beanConsulta.selectedConsulta.idCitas.idConsultorio.idAreas.tipoAreas}" style="color: #30a5ff"/>
+
+                                            <h:outputText value="Hospital : " />
+                                            <h:outputText value="#{beanConsulta.selectedConsulta.idCitas.idConsultorio.idAreas.idHospital.hospital}" style="color: #30a5ff"/>
+                                        </p:panelGrid>
+                                    </p:outputPanel>
+                                </p:dialog>
+                            </h:form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div><!--/.row-->
+
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="back-link">Power By <a href="/administrador.xhtml">CDS USAM</a></p>
+                </div>
+            </div><!--/.row-->
+        </div>	<!--/.main--> 
+        <script src="vendor/js/bs3/bootstrap.min.js"></script>
+    </h:body>
+</html>
+

@@ -1,0 +1,463 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Administrador</title>
+        <link href="vendor/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="vendor/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
+        <link href="vendor/css/datepicker3.css" rel="stylesheet"/>
+        <link href="vendor/css/styles.css" rel="stylesheet"/>
+        <link href="images/logo1.png" rel="shortcut icon" ></link>
+        <!--Custom Font-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
+        <style>
+            .ui-growl-item-container{
+                position:relative !important;
+                margin: 40px 0 10px 0 !important;
+                opacity:.85 !important;
+                filter:alpha(opacity=85) !important;
+            }
+        </style>
+    </h:head>
+    <h:body> 
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="#"><span>C M </span>Ultimo Suspiro</a>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <!--<form action="" method="post"><br/>
+                            <input type="text" name="buscar" placeholder="Bucar..." class="form-control-sm btn btn-info"/>
+                            <input type="submit" name="enviar" value="Buscar" class="btn btn-info"/>
+                        </form>-->
+
+                    </ul>
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+            <div class="profile-sidebar">
+                <div class="profile-userpic">
+                    <img src="images/admin.jpg" class="img-responsive" alt=""/>
+                </div>
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">Usuario</div>
+                    <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="divider"></div>
+            <form role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Buscar.."/>
+                </div>
+            </form>
+            <ul class="nav menu">
+                <li class="active"><a href="administrador.xhtml"><spam class="glyphicon glyphicon-th-large"/>&nbsp; Administrador</a></li>
+                <br></br><h3> &nbsp;Consultar</h3>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+                        <em class="fa fa-navicon">&nbsp;</em> Consultar Datos 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-1" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-1">
+                        <li><a class="" href="mostrarDepto.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Departamentos
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarMuni.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Municipios
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarUsuario.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Usuarios
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-7">
+                        <em class="fa fa-navicon">&nbsp;</em>Consultar Hospital 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-7" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-7">
+                        <li><a class="" href="consultarExpe.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Expedientes
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarArea.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Areas
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarCons.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Consultorios
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarTurno.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Turnos
+                            </a>
+                        </li>
+                        <li><a class="" href="mostrarHospital.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Hospital
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-8">
+                        <em class="fa fa-navicon">&nbsp;</em>Consult Medicamento
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-8" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-8">    
+                        <li><a class="" href="mostrarMedicamentoTipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span>Medicamentos y tipos
+                            </a>
+                        </li>
+                        <li><a class="" href="mostrarTipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span>Medicamentos
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-9">
+                        <em class="fa fa-navicon">&nbsp;</em>Consult Enfermedad
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-9" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-9">
+                        <li><a class="" href="consultar_enfermedad.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Enfermedad
+                            </a>
+                        </li>
+                        <li><a class="" href="mostrar_tipo_emfermedad.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Tipos de Enfermedades
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <br></br><h3> &nbsp;Insertar</h3>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-6">
+                        <em class="fa fa-">&nbsp;</em> In Datos Usuarios
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-6" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-6">
+                        <li><a class="" href="insertarDepto.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Departamento
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarMuni.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Municipio
+                            </a>
+                        </li>
+                        <li><a class="" href="insertarUsuario.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Usuario
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-3">
+                        <em class="fa fa-">&nbsp;</em> In Datos Hospital
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-3" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-3">
+                        <li><a class="" href="ingresarCons.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Consultorio
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarExpe.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Expediente
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarTipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Tipo Medicamento
+                            </a>
+                        </li>
+                        <li><a class="" href="insertarArea.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Area
+                            </a>
+                        </li>
+                        
+                        <li><a class="" href="insertarHospital.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Hospital
+                            </a>
+                        </li>
+                        <li><a class="" href="insertarTurno.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Turno
+                            </a>
+                        </li>
+                       
+                    </ul>
+                </li>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-4">
+                        <em class="fa fa-">&nbsp;</em> In Medicamentos
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-4" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-4"> 
+                        <li><a class="" href="ingresarMedicamento.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> medicamento
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarMedicamentotipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Medicamento Tipo
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarTipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Tipo Medicamento
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-5">
+                        <em class="fa fa-">&nbsp;</em> In Enfermedades
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-5" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-5">
+                        <li><a class="" href="insertaEnfermedad.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Enfermedad
+                            </a>
+                        </li>
+                        <li><a class="" href="insertar_tipo_enfermedad.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Tipo Enfermedad
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <br/>
+                <li><a href="../index.xhtml"><em class="fa fa-close">&nbsp;</em> Cerrar Cesion</a></li>
+            </ul>
+        </div><!--/.sidebar-->
+
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main"> 
+            <div class="row">
+                <div class="col-lg-12">
+                    <h6 class="page-header">Bienvenido #{user}</h6>
+                </div>
+            </div><!--/.row-->
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default text-center">
+                        <h1><strong>Usuarios</strong></h1>
+
+                        <hr></hr>
+                        <p:growl id="grow1" life="3000" showDetail="true" class="c"/>
+                        <h:form>
+                            <p:dataTable var="d" value="#{beanDatos.listaDatos}" widgetVar="datosT" reflow="true" rows="10" paginator="true"
+                                         emptyMessage="No hay datos" filteredValue="#{beanDatos.filtros}">
+                                <f:facet name="header">
+                                    <p:outputPanel>
+                                        <h:outputText value="Buscar:" />
+                                        <p:inputText id="globalFilter" onkeyup="PF('datosT').filter()"  placeholder="Buscar en todo:"/>
+                                    </p:outputPanel>
+                                </f:facet>
+
+                                <p:column class="col-lg-1 col-md-1 alert-success" headerText="Id" footerText="Id" filterMatchMode="Id">
+                                    <h:outputText value="#{d.idDatos}" class="form-control"/>
+                                </p:column>
+
+                                <p:column class="col-lg-2 col-md-2 alert-success" headerText="Nombre"  footerText="Nombres" filterMatchMode="lte">
+                                    <f:facet name="filter">
+                                        <p:spinner onchange="PF('datosT').filter()" styleClass="year-spinner custom-filter">
+                                            <f:converter converterId="javax.faces.Integer" />
+                                        </p:spinner>
+                                    </f:facet>
+                                    <h:outputText value="#{d.nombres}" class="form-control" />
+                                </p:column>
+
+                                <p:column class="alert-success" headerText="Municipio" footerText="Municipio" filterMatchMode="exact">
+                                    <f:facet name="filter">
+                                        <p:selectOneMenu onchange="PF('datosT').filter()" styleClass="custom-filter">
+                                            <f:selectItem itemLabel="Select One" itemValue="#{d.idMuni.muni}" noSelectionOption="true" />
+                                            <f:selectItems value="#{d.idMuni.muni}" />
+                                        </p:selectOneMenu>
+                                    </f:facet>
+                                    <h:outputText value="#{d.idMuni.muni}" class="form-control" />
+                                </p:column>
+
+                                <p:column class="col-lg-2 col-md-2 alert-success" headerText="Usuario" footerText="Usuario" filterMatchMode="lte">
+                                    <f:facet name="filter">
+                                        <p:spinner onchange="PF('datosT').filter()" styleClass="year-spinner custom-filter">
+                                            <f:converter converterId="javax.faces.Integer" />
+                                        </p:spinner>
+                                    </f:facet>
+                                    <h:outputText value="#{d.usuario}" class="form-control" />
+                                </p:column>
+
+                                <p:column class="alert-success" headerText="Genero" footerText="Genero" filterMatchMode="in">
+                                    <f:facet name="filter">
+                                        <p:selectCheckboxMenu label="Genero" onchange="PF('datosT').filter()" scrollHeight="150" styleClass="custom-filter">
+                                            <f:selectItems value="#{d.genero}" itemLabel="#{d.genero}" itemValue="#{d.genero}"/>
+                                        </p:selectCheckboxMenu>
+                                    </f:facet>
+                                    <h:outputText value="#{d.genero}" class="form-control" />
+                                </p:column>
+
+                                <p:column class="alert-success" headerText="Codigo" footerText="Codigo" filterMatchMode="Id">
+                                    <h:outputText value="#{d.codigoH}" class="form-control" />
+                                </p:column>
+
+                                <p:column class="col-lg-1 col-md-1 alert-success" headerText="Tipo" footerText="Usuario" filterMatchMode="Id">
+                                    <h:outputText value="#{d.idRole.role}" class="form-control" />
+                                </p:column>
+
+                                <p:column class="alert-success" footerText="Acciones" headerText="Acciones">
+                                    <p:menuButton value="Acciones">
+                                        <p:menuitem value="Actualizar" update="form2" onclick="PF('ventana').show();" actionListener="#{beanDatos.consultarIdD(d.idDatos)}" icon="pi pi-refresh" />
+                                        <p:menuitem value="Borrar" ajax="false" actionListener="#{beanDatos.eliminarD(d.idDatos)}" icon="pi pi-times" />
+                                        <p:separator />
+                                        <p:menuitem value="Ir a Inicio" url="administrador.xhtml" icon="pi pi-home" />
+                                    </p:menuButton>
+                                </p:column>       
+                            </p:dataTable>
+                        </h:form>
+
+                        <p:dialog header="Muestra De Datos Para Actualizar Informacion" widgetVar="ventana" modal="true" height="650" width="700" showEffect="fade" hideEffect="explode" >              
+
+                            <h:form id="form2">  
+                                <div class="row text-left">
+                                    <p:panel header="Actualizar Cuenta" class="alert-danger" id="panel" style="text-align: center;width: 600px;margin: auto;height: 960px;border-radius: 10px;">  
+                                        <div class="col-lg-12 col-md-12">
+                                            <p:outputLabel/>
+                                            <h:inputHidden value="#{beanDatos.id_datos}" />
+                                        </div><br></br>
+                                        <div class="col-lg-6 col-md-6">
+                                            <p:outputLabel value="--  ID: --"/>
+                                            <p:inputText id="id_datosq"  style="border-radius: 8px;" value="#{beanDatos.id_datos}" disabled="true"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <p:outputLabel value="Nombres :"/>
+                                            <p:inputText id="nombres"  style="border-radius: 8px;" requiredMessage="Nombre es obligatorio" value="#{beanDatos.nombres}"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Apellido :"/>
+                                            <p:inputText id="apellidos" required="true" value="#{beanDatos.apellido}" requiredMessage="Apellido es obligatorio" style="border-radius: 8px;" />
+                                        </div>
+                                        <div class="col-lg-6"><br/><br/>
+                                            <p:outputLabel value="Telefono :"/>
+                                            <p:inputText id="tel" required="true" requiredMessage="Tel es obligatorio" style="border-radius: 8px;" value="#{beanDatos.tel}"/>
+                                        </div><div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Edad :"/>
+                                            <p:inputText id="edad" required="true" requiredMessage="Edad es obligatorio" style="border-radius: 8px;" value="#{beanDatos.edad}"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Direc :"/>
+                                            <p:inputText id="direc" required="true" requiredMessage="Direccion es requerido" style="border-radius: 8px;" value="#{beanDatos.direccion}"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Email :"/>
+                                            <p:inputText id="email" required="true" requiredMessage="Correo es obligatorio" style="border-radius: 8px;" value="#{beanDatos.correo}"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Dui :"/>
+                                            <p:inputText id="dui" required="true" type="" requiredMessage="dui es requerido" style="border-radius: 8px;" value="#{beanDatos.dui}"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Nit :"/>
+                                            <p:inputText id="nit" required="true" type="" requiredMessage="nit es requerido" style="border-radius: 8px;" value="#{beanDatos.nit}"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Genero :"/>
+                                            <p:inputText id="genero" required="true" type="" requiredMessage="Genero es requerido" style="border-radius: 8px;" value="#{beanDatos.genero}"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Nivel de Acceso :" class="acceso"/>
+                                            <p:selectOneMenu id="tipo" value="#{beanDatos.id_role}">
+                                                <f:selectItems value="#{beanDatos.listaRole}" var="l" itemLabel="#{l.role}" itemValue="#{l.idRole}" />
+                                            </p:selectOneMenu>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Cod H:" class="acceso"/>
+                                            <p:inputText   style="border-radius: 8px;" required="true" requiredMessage="Codigo es obligatorio" value="#{beanDatos.codigo_h}"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Municipio :" class="acceso"/>
+                                            <p:selectOneMenu id="codigo" value="#{beanDatos.id_muni}">
+                                                <f:selectItems value="#{beanDatos.listaMuni}" var="m" itemLabel="#{m.muni}" itemValue="#{m.idMuni}"/>               
+                                            </p:selectOneMenu>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Turno :" class="acceso"/>
+                                            <p:selectOneMenu id="turno" value="#{beanDatos.id_turno}">
+                                                <f:selectItems value="#{beanDatos.listaTurno}" var="t" itemLabel="d: #{t.desde.hours}:#{t.desde.minutes} a: #{t.hasta.hours}:#{t.hasta.minutes} #{t.tipoTurno}" itemValue="#{t.idTurno}"/>               
+                                            </p:selectOneMenu>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Pin:"/>
+                                            <p:inputText id="pin" required="true" type="" requiredMessage="Pin es requerido" style="border-radius: 8px;" value="#{beanDatos.pin}"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Estado :"/>
+                                            <p:inputText id="estado" required="true" type="" requiredMessage="estado es requerido" style="border-radius: 8px;" value="#{beanDatos.estado}"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Respon :"/>
+                                            <p:inputText id="res" required="true" type="" requiredMessage="responsable es requerido" style="border-radius: 8px;" value="#{beanDatos.responsable}"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Tel R:"/>
+                                            <p:inputText id="tel_res" required="true" type="" requiredMessage="tel Responsable es requerido" style="border-radius: 8px;" value="#{beanDatos.tel_responsable}"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Usuario :"/>
+                                            <p:inputText id="users" required="true" type="" requiredMessage="Usuario es requerido" style="border-radius: 8px;" value="#{beanDatos.usuario}"/>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:outputLabel value="Contra :"/>
+                                            <h:inputText id="passw" required="true" requiredMessage="Contraseña es requerido" style="border-radius: 8px;" value="#{beanDatos.clave}"/>
+                                        </div>
+
+                                        <div class="col-lg-12"><br/><br/>
+                                            <p:commandButton value="Actualizar" action="#{beanDatos.actualizarDato(beanDatos.id_datos)}" class="btn btn-outline-dark"/><br/>
+                                        </div><br/>
+                                        <div class="col-lg-12"><br/>
+                                            <p:commandButton value="Limpiar" action="#{beanDatos.limpiar()}" class="btn btn-outline-warning"/>
+                                        </div><p:messages id="messages"/> 
+                                    </p:panel>
+                                </div>
+                            </h:form>              
+                        </p:dialog> 
+
+                        <div class="panel-body">
+                            <div class="canvas-wrapper">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!--/.row-->
+
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="back-link">Power By <a href="/administrador.xhtml">CDS USAM</a></p>
+                </div>
+            </div><!--/.row-->
+        </div>	<!--/.main-->
+        <script src="vendor/js/bs3/bootstrap.min.js"></script>
+    </h:body>
+</html>
+

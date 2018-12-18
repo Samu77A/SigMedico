@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Administrador</title>
+     <link href="vendor/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="vendor/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
+        <link href="vendor/css/datepicker3.css" rel="stylesheet"/>
+        <link href="vendor/css/styles.css" rel="stylesheet"/>
+        <link href="images/logo1.png" rel="shortcut icon" ></link>
+        <!--Custom Font-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
+ <style>
+            .ui-growl-item-container{
+                position:relative !important;
+                margin: 40px 0 10px 0 !important;
+                opacity:.85 !important;
+                filter:alpha(opacity=85) !important;
+            }
+        </style>
+    </h:head>
+    <h:body> 
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="#"><span>C M </span>Ultimo Suspiro</a>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <form action="" method="post"><br/>
+                            <input type="text" name="buscar" placeholder="Bucar..." class="form-control-sm btn btn-info"/>
+                            <input type="submit" name="enviar" value="Buscar" class="btn btn-info"/>
+                        </form>
+
+                    </ul>
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+            <div class="profile-sidebar">
+                <div class="profile-userpic">
+                    <img src="images/admin.jpg" class="img-responsive" alt=""/>
+                </div>
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">Usuario</div>
+                    <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="divider"></div>
+            <form role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Buscar.."/>
+                </div>
+            </form>
+            <ul class="nav menu">
+                <li class="active"><a href="administrador.xhtml"><spam class="glyphicon glyphicon-th-large"/>&nbsp; Administrador</a></li>
+                <br></br><h3> &nbsp;Consultar</h3>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+                        <em class="fa fa-navicon">&nbsp;</em> Consultar Datos 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-1" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-1">
+                        <li><a class="" href="mostrarDepto.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Departamentos
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarMuni.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Municipios
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarUsuario.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Usuarios
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-7">
+                        <em class="fa fa-navicon">&nbsp;</em>Consultar Hospital 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-7" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-7">
+                        <li><a class="" href="consultarExpe.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Expedientes
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarArea.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Areas
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarCons.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Consultorios
+                            </a>
+                        </li>
+                        <li><a class="" href="consultarTurno.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Turnos
+                            </a>
+                        </li>
+                        <li><a class="" href="mostrarHospital.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Hospital
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-8">
+                        <em class="fa fa-navicon">&nbsp;</em>Consult Medicamento
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-8" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-8">    
+                        <li><a class="" href="mostrarMedicamentoTipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span>Medicamentos y tipos
+                            </a>
+                        </li>
+                        <li><a class="" href="mostrarTipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span>Medicamentos
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-9">
+                        <em class="fa fa-navicon">&nbsp;</em>Consult Enfermedad
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-9" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-9">
+                        <li><a class="" href="consultar_enfermedad.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Enfermedad
+                            </a>
+                        </li>
+                        <li><a class="" href="mostrar_tipo_emfermedad.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Tipos de Enfermedades
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <br></br><h3> &nbsp;Insertar</h3>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-6">
+                        <em class="fa fa-">&nbsp;</em> In Datos Usuarios
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-6" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-6">
+                        <li><a class="" href="insertarDepto.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Departamento
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarMuni.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Municipio
+                            </a>
+                        </li>
+                        <li><a class="" href="insertarUsuario.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Usuario
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-3">
+                        <em class="fa fa-">&nbsp;</em> In Datos Hospital
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-3" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-3">
+                        <li><a class="" href="ingresarCons.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Consultorio
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarExpe.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Expediente
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarTipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Tipo Medicamento
+                            </a>
+                        </li>
+                        <li><a class="" href="insertarArea.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Area
+                            </a>
+                        </li>
+                        
+                        <li><a class="" href="insertarHospital.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Hospital
+                            </a>
+                        </li>
+                        <li><a class="" href="insertarTurno.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Turno
+                            </a>
+                        </li>
+                       
+                    </ul>
+                </li>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-4">
+                        <em class="fa fa-">&nbsp;</em> In Medicamentos
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-4" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-4"> 
+                        <li><a class="" href="ingresarMedicamento.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> medicamento
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarMedicamentotipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Medicamento Tipo
+                            </a>
+                        </li>
+                        <li><a class="" href="ingresarTipo.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Tipo Medicamento
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="parent "><a data-toggle="collapse" href="#sub-item-5">
+                        <em class="fa fa-">&nbsp;</em> In Enfermedades
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<span data-toggle="collapse" href="#sub-item-5" class="glyphicon glyphicon-plus "></span>
+                    </a>
+                    <ul class="children collapse" id="sub-item-5">
+                        <li><a class="" href="insertaEnfermedad.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Enfermedad
+                            </a>
+                        </li>
+                        <li><a class="" href="insertar_tipo_enfermedad.xhtml">
+                                <span class="fa fa-arrow-right">&nbsp;</span> Tipo Enfermedad
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <br/>
+                <li><a href="../index.xhtml"><em class="fa fa-close">&nbsp;</em> Cerrar Cesion</a></li>
+            </ul>
+        </div><!--/.sidebar-->
+
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main"> 
+            <div class="row">
+                <div class="col-lg-12">
+                    <h6 class="page-header">Bienvenido #{user}</h6>
+                </div>
+            </div><!--/.row-->
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default text-center">
+                        <h1><strong>Insertar el Tipo</strong></h1>
+
+                        <hr></hr>
+                        <div class="card-body">
+                        <p:growl id="grow1" life="3000" showDetail="true"/>
+                        <h:form  styleClass="body"> 
+
+
+                            <p:growl id="grow1">
+                                <p:autoUpdate>
+                                    
+                                </p:autoUpdate>
+                                    
+
+                                    
+                            </p:growl>
+                            <p:panel class="card card-body" styleClass="login">
+                                <p:layoutUnit position="center">
+                                    <h:panelGrid columns="6" cellspacing="6" cellpadding="6" id="login" styleClass="login">   
+                                        <div class="col-lg-6 col-md-6"> <br/><br/>
+                                                                                                                                    
+                                            <h:outputLabel value="Tipo de medicamento" class=""/>
+                                            <h:inputText value="#{beanTipo.tipo_medicamento}" required="true" class="form-control"/><br></br><br></br><br></br><br></br>                                   
+                                        </div>
+                                        
+                                        
+                                        <div class="col-lg-6 col-md-6"><br/><br/>
+                                            <p:commandButton value="Ingresar" action="#{beanTipo.guardarTipo()}" class="btn btn-outline-info text-center form-control" />
+                                        </div>
+                                    </h:panelGrid>
+                                </p:layoutUnit>
+
+                            </p:panel>
+
+                        </h:form>
+                    </div>
+                      
+                    </div>
+                </div>
+            </div><!--/.row-->
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="back-link">Power By <a href="/administrador.xhtml">CDS USAM</a></p>
+                </div>
+            </div><!--/.row-->
+        </div>	<!--/.main-->
+   <script src="vendor/js/bs3/bootstrap.min.js"></script>
+    </h:body>
+</html>
+
+
+
+
+
+
